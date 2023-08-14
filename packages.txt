@@ -3,3 +3,10 @@ libsm6
 libxext6
 build-essential
 pkg-config
+portaudio19-dev 
+python-pyaudio
+libasound2-dev
+portaudio19-dev
+libportaudio2
+libportaudiocpp0
+ffmpeg
