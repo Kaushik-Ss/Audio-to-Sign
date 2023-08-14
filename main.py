@@ -5,6 +5,23 @@ from PIL import Image, ImageOps, ImageChops
 import os
 
 def main():
+
+    import pyaudio
+
+    pa = pyaudio.PyAudio()
+
+    print('\navailable devices:')
+
+    for i in range(pa.get_device_count()):
+        dev = pa.get_device_info_by_index(i)
+        name = dev['name'].encode('utf-8')
+        print(i, name, dev['maxInputChannels'], dev['maxOutputChannels'])
+
+    print('\ndefault input & output device:')
+    print(pa.get_default_input_device_info())
+    print(pa.get_default_output_device_info())
+
+
     st.title("Image Display with Speech Recognition")
 
     r = sr.Recognizer()
