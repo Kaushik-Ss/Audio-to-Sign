@@ -24,7 +24,8 @@ def main():
             display_images(text_input, background_color)
 
 def process_speech(recognizer, microphone):
-    with microphone as source:
+    with microphone(device_index=2) as source:
+
         recognizer.adjust_for_ambient_noise(source, duration=0.2)
         st.write("Listening...")
         audio = recognizer.listen(source)
